@@ -175,7 +175,7 @@ static CGFloat minVolume                    = 0.00001f;
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if (context == sessionContext) {
-        if (!self.appIsActive) {
+        if (!self.appIsActive && !self.enableWhenInactive) {
             // Probably control center, skip blocks
             return;
         }
